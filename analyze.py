@@ -97,8 +97,8 @@ def rnn_model_is_valid(experiment_name, model):
             return False
         if MAX_DATETIME and dt > MAX_DATETIME:
             return False
-    if model['hidden_size'] not in [2,5,10,20,50,100]:
-        return False
+    # if model['hidden_size'] not in [2,5,10,20,50,100]:
+    #     return False
     if model['ncues'] != 1:
         return False
     if model.get('rnn_mode', 'value') != 'value':
@@ -191,7 +191,8 @@ def save_sessions(sessions, args):
     if args.hidden_size:
         filename += '_h{}'.format(args.hidden_size)
     outfile = os.path.join(args.outdir, filename + '.pickle')
-    pickle.dump(results, open(outfile, 'wb'))
+    with open(outfile, 'wb') as fp:
+        pickle.dump(results, fp)
 
 def main(args):
     experiments = get_experiments(args.experiment)

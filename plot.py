@@ -24,7 +24,8 @@ def load_sessions(experiment_name, sessiondir):
                 key = (key, results['hidden_size'])
             sessions = results['sessions']
             if 'rnn' in results['model_type']:
-                sessions = [x for x in sessions if x['hidden_size'] in [2,5,10,20,50,100]]
+                # sessions = [x for x in sessions if x['hidden_size'] in [2,5,10,20,50,100]]
+                sessions = [x for x in sessions]
             Sessions[key] = sessions
     return Sessions
 

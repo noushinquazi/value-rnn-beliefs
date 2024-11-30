@@ -8,7 +8,7 @@ def traj(Sessions, outdir, hidden_size, xline, input_name, figname, xtick, exper
     # Figs 5C, 5D: plot distance from ITI following observations, across models
     rnns = [rnn for rnn in Sessions.get('value-rnn-trained', []) if rnn['hidden_size'] == hidden_size]
     if len(rnns) == 0:
-        print("ERROR: Could not find any value-rnn-trained, H={} models in processed sessions data.".format(hidden_size))
+        print("HI! ERROR: Could not find any value-rnn-trained, H={} models in processed sessions data.".format(hidden_size))
         return
 
     plt.figure(figsize=(2,2))

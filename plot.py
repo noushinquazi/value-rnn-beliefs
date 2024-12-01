@@ -32,7 +32,6 @@ def load_sessions(experiment_name, sessiondir):
 def summary_plots(experiment_name, Sessions, outdir, hidden_size, iti_min=DEFAULT_ITI_MIN, isi_max=DEFAULT_ISI_MAX, gain_to_plot=ESN_GAIN_TO_PLOT):
     if experiment_name == 'babayan-interpolate':
         return
-    
     # Figs 3D, 4B-C, 7D-E: plot RPE MSE, belief-rsq, and decoding-LL per model
     if 'starkweather' in experiment_name:
         attrnames = ['rpe-mse', 'belief-rsq', 'state-LL', 'memory-difference', 'memory-difference-with-esn']
